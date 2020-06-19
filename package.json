@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "parcel src/index.html --https",
+    "serve": "parcel src/index.html --port 443 --https",
     "build": "parcel build src/index.html"
   },
   "author": "",
