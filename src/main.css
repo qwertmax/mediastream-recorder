@@ -31,7 +31,8 @@ body {
 
 button {
   width: 80px;
-  padding: 10px 0;
+  height: 40px;
+  padding: 0;
   border: 0;
   border-radius: 4px;
   color: #fff;
@@ -49,6 +50,16 @@ button {
 #buttonStop {
   background-color: #fa575c;
 }
-#buttonDelete {
+#buttonUpload {
   background-color: #0967d2;
+}
+#buttonDelete {
+  background-color: #fa575c;
+}
+#uploadedKey {
+  height: 40px;
+  padding: 0 10px;
+  min-width: 0;
+  width: 100px;
+  border-radius: 4px;
 }
