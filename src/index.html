@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <!-- For mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Voice recording</title>
+    <link href="./main.css" rel="stylesheet" />
+    <style></style>
+  </head>
+
+  <body>
+    <section id="voiceRecording" class="card">
+      <div id="timer"></div>
+      <div class="buttons">
+        <button id="buttonStart">start</button>
+        <button id="buttonStop">stop</button>
+        <button id="buttonDelete">delete</button>
+      </div>
+      <div id="audioContainer">
+        <div><audio id="player" controls></audio></div>
+        <div><a id="link">Download Link</a></div>
+      </div>
+      <div id="logs"></div>
+    </section>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
