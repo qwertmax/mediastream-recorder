@@ -30,11 +30,25 @@ body {
 }
 
 button {
-  padding: 10px 20px;
+  width: 80px;
+  padding: 10px 0;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
 }
 
 #timer,
 #logs,
 .audio {
   padding: 10px;
+}
+
+#buttonStart {
+  background-color: #27ab83;
+}
+#buttonStop {
+  background-color: #fa575c;
+}
+#buttonDelete {
+  background-color: #0967d2;
 }
