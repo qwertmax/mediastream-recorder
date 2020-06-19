@@ -62,6 +62,7 @@ class Recording {
       this.updateRecordTimer();
     } catch (error) {
       this.logger(error.message);
+      this.setDefaultProperties();
     }
   }
 
@@ -103,9 +104,9 @@ class Recording {
   }
 
   setDefaultProperties() {
+    clearInterval(this.interval);
     this.recording = false;
     this.recordTimer = 0;
-    clearInterval(this.interval);
   }
 
   render() {
