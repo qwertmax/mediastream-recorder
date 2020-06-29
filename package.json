@@ -1,17 +1,63 @@
 {
   "name": "telling-recorder",
   "version": "1.0.0",
+  "private": true,
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "serve": "parcel src/index.html --port 443 --https",
-    "build": "parcel build src/index.html"
-  },
   "author": "",
-  "license": "ISC",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "main": "index.js",
   "dependencies": {
+    "core-js": "^3.6.5",
     "inline-worker": "^1.1.0",
     "parcel-bundler": "^1.12.4",
-    "regenerator-runtime": "^0.13.5"
-  }
+    "regenerator-runtime": "^0.13.5",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-plugin-router": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "comma-dangle": [
+        1,
+        "only-multiline"
+      ]
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "_id": "telling-recorder@1.0.0",
+  "license": "ISC",
+  "readme": "ERROR: No README data found!"
 }

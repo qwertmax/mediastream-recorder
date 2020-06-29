@@ -1,9 +1,25 @@
-# mediastream-recorder
+# telling-recorder
 
-## buid project
+## Project setup
+
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+
+```
+yarn serve
+```
+
+### Compiles and minifies for production
 
 ```
 yarn build
 ```
 
-this command builds project to `/dist` folder
+### Lints and fixes files
+
+```
+yarn lint
+```

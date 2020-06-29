@@ -43,7 +43,7 @@ export class Recorder {
     this.node.connect(this.context.destination); //this should not be necessary
 
     let self = {};
-    this.worker = new InlineWorker(function () {
+    this.worker = new InlineWorker(function() {
       let begining = true;
       let recLength = 0;
       let silence = 0;
@@ -52,7 +52,7 @@ export class Recorder {
       let sampleRate;
       let numChannels;
 
-      this.onmessage = function (e) {
+      this.onmessage = function(e) {
         switch (e.data.command) {
           case "init":
             init(e.data.config);
@@ -80,24 +80,25 @@ export class Recorder {
 
       function record(inputBuffer) {
         for (let channel = 0; channel < numChannels; channel++) {
-          if (channel === 0) {
-            for (let i = 0, len = inputBuffer[channel].length; i < len; i++) {
-              if (inputBuffer[channel][i] === 0) {
-                silence += 1;
-                if (!begining && inputBuffer[channel][i - 1] === 0) {
-                  silence2 += 1;
-                }
-              } else {
-                begining = false;
-              }
-            }
-          }
           recBuffers[channel].push(inputBuffer[channel]);
         }
         recLength += inputBuffer[0].length;
       }
 
       function exportWAV(type) {
+        for (let i = 0, len = recBuffers[0].length; i < len; i++) {
+          for (let j = 0, len = recBuffers[0][i].length; j < len; j++) {
+            if (recBuffers[0][i][j] === 0) {
+              silence += 1;
+              if (!begining && recBuffers[0][i][j - 1] === 0) {
+                silence2 += 1;
+              } else {
+                begining = false;
+              }
+            }
+          }
+        }
+
         let buffers = [];
         for (let channel = 0; channel < numChannels; channel++) {
           buffers.push(mergeBuffers(recBuffers[channel], recLength));

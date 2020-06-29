@@ -24,18 +24,18 @@ export const sendVoiceToAWS = async (payload) => {
 
   const { name, blob } = payload;
 
+  const params = {
+    Bucket: AWS_ALBUM_BUCKET_NAME,
+    Key: name,
+    Body: blob,
+    ACL: AWS_ACL,
+  };
+
   const upload = new window.AWS.S3.ManagedUpload({
     partSize: 1024 * 1024 * 1024,
     queueSize: 1,
-    params: {
-      Bucket: AWS_ALBUM_BUCKET_NAME,
-      Key: name,
-      Body: blob,
-      ACL: AWS_ACL,
-    },
+    params,
   });
 
-  return upload
-    .promise()
-    .catch(({ message }) => console.error(`uploading is failed: ${message}`));
+  return upload.promise();
 };

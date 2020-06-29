@@ -36,3 +36,9 @@ export const formatTime = (sec) => {
 };
 
 export const numToTimeFormat = (num) => (num < 10 ? `0${num}` : num);
+
+export const saveLog = (event, params = "") => {
+  console.log(event, params);
+};
+
+export const isIOS = /iPad|iPhone|iPod/i.test(window.navigator.userAgent);
